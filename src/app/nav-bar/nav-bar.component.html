@@ -1,7 +1,28 @@
-<div class="mobileNav"
+<div class="nav"
 [class.dim]="menuOpened"
 >
     <img class="homeIcon" src="assets/images/logo.svg" alt="">
+
+    <div class="menu">
+
+        <div class="menuItems">
+            <div class="menuItem">
+                <p>Features</p>
+                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+            </div>
+            <div class="menuItem">
+                <p>Company</p>
+                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+            </div>
+            <div class="menuItem">Carreers</div>
+            <div class="menuItem">About</div>
+        </div>
+
+    </div>
+
+    <div class="button login">Login</div>
+    <div class="button register">Register</div>
+
     <img class="menuIcon" src="assets/images/icon-menu.svg" alt=""
     (click)="openMenu()"
     >
@@ -17,8 +38,14 @@
         >
     
         <div class="menuItems">
-            <div class="menuItem">Features</div>
-            <div class="menuItem">Company</div>
+            <div class="menuItem">
+                <p>Features</p>
+                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+            </div>
+            <div class="menuItem">
+                <p>Company</p>
+                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+            </div>
             <div class="menuItem">Carreers</div>
             <div class="menuItem">About</div>
         </div>
