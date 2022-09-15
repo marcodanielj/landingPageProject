@@ -1,0 +1,142 @@
+@import 'src/styles';
+
+:host {
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
+
+    padding-bottom: 100px;
+
+    // alinha horizontalmente no centro
+    justify-content: center;
+    // alinha verticalmente no centro
+    align-items:flex-end;
+    
+
+    .mobileHero {
+        min-width: 100vw;
+    }
+
+    .desktopHero {
+        display: none;
+    }
+
+    .info {
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;    
+        align-items: center;
+        padding: 0px 10px 0px 10px;
+        gap: 25px;
+
+        .title {
+            
+            font-size: 2.3rem;
+            font-weight: 700;
+            color: $almostBlack;
+            text-align: center;
+        }
+    
+        .description {
+            max-inline-size: 90vw;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            font-weight: 500;
+            text-align: center;
+            color: $mediumGray;
+
+        }
+
+        .button {
+            
+            width: 100px;
+            padding: 17px;
+            text-align: center;
+            font-size: 1em;
+            color: $almostWhite;
+            background-color: $almostBlack;
+            border-radius: 13px;
+            border: 1px solid transparent;
+            
+
+            &:hover {
+
+                cursor: pointer;
+                border: 1px solid $almostBlack;
+                background-color: $almostWhite;
+                color: $almostBlack;
+            
+            }
+        }
+
+        .logos {
+        
+            display: flex;
+            flex-direction: row;
+            
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 5vw;
+            gap: 7vw;
+
+            img {
+                max-width: 18vw;
+            }
+        }
+
+        // info complexity for bigger screens
+        @media (min-width: 770px) {
+
+            gap: 40px;
+
+            .title {
+                text-align: left;
+                max-inline-size: 33vw;
+                font-size: 5vw;
+                margin-top: 5vw;
+            }
+
+            .description {
+                max-inline-size: 26vw;
+                text-align: left;
+                font-size: 1em;
+            }
+
+            .logos {
+
+                justify-content: left;
+                gap: 4vw;
+
+                img {
+                    width: 5vw;
+                }
+            }
+        }
+
+    }
+
+    // adding complexity for bigger screens
+    @media (min-width: 770px) {
+
+        justify-content: space-evenly;
+        gap: 0px;
+
+        .mobileHero {
+            display: none;
+        }
+
+        .desktopHero {
+            display: block;
+            max-height: 80vh;
+        }
+
+        .info {
+            align-items: unset;
+        }
+
+    }
+}

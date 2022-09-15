@@ -1,0 +1,67 @@
+@import 'src/styles.scss';
+
+:host {
+
+    .mobileNav {
+
+        padding: 20px;
+
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        align-items:center;
+
+        width: 100vw;
+
+        background-color: $almostWhite;
+        
+
+        .homeIcon {
+            width: 90px;
+        }
+
+        .menuIcon {
+            height: 20px;
+            margin-right: 50px;
+            
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .mobileMenu {
+
+        visibility: hidden;
+
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba($color: $almostBlack, $alpha: .7);
+
+        .content {
+
+            background-color: $almostWhite;
+            position: fixed;
+            right: 0;
+            height: 100vh;
+            width: 70vw;
+
+        .closeIcon {
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+
+        }
+    }
+
+    .menuOpened {
+        visibility: visible;
+    }
+    
+}

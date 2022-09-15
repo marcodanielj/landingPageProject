@@ -1,0 +1,28 @@
+<div class="mobileNav"
+[class.dim]="menuOpened"
+>
+    <img class="homeIcon" src="assets/images/logo.svg" alt="">
+    <img class="menuIcon" src="assets/images/icon-menu.svg" alt=""
+    (click)="openMenu()"
+    >
+</div>
+
+<div class="mobileMenu"
+    [class.menuOpened]="menuOpened">
+
+    <div class="content">
+
+        <img src="assets/images/icon-close-menu.svg" alt="" class="closeIcon"
+        (click)="closeMenu()"
+        >
+    
+        <div class="menuItems">
+            <div class="menuItem">Features</div>
+            <div class="menuItem">Company</div>
+            <div class="menuItem">Carreers</div>
+            <div class="menuItem">About</div>
+        </div>
+
+    </div>
+
+</div>
