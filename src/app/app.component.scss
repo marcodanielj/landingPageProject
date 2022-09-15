@@ -1,0 +1,14 @@
+:host {
+
+    .navBar {
+        position: fixed;
+    }
+
+    .home {
+        position: absolute;
+        width: 100vw;
+
+        // same height as nav bar so they dont overlay
+        margin-top: 70px;
+    }
+}
