@@ -2,8 +2,6 @@
 
 :host {
 
-
-
     .nav {
 
         padding: 20px 0px 20px 0px;
@@ -16,18 +14,15 @@
 
         width: 100vw;
         height: 3vh;
-        
 
         background-color: $almostWhite;
         
-
         .homeIcon {
+
             width: 70px;
             padding-left: 30px;
-            padding-right: 40px;
             
         }
-
 
         .menuIcon {
 
@@ -38,15 +33,14 @@
                 cursor: pointer;
             }
         }
-
     }
 
+    // desktop menu
     .menu {
         
         flex-grow: 1;
         display: none;
         
-
         .menuItems {
 
             display: flex;
@@ -54,65 +48,131 @@
             align-items: center;
             justify-content: flex-start;
             
-
+            // itemName + dropdown
             .menuItem {
-
                 
                 display: flex;
-                flex-direction: row;
-                align-items: center;
+                gap: 10px;
 
-                padding: 0px 3vw 0px 0px;
+                .itemName {
 
-                font-size: .8em;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    color: rgba($color: $almostBlack, $alpha: .7);
 
-                .chevronDown {
-                    color: $mediumGray;
-                    padding-left: 10px;
-                    height: 5px;
+                    padding: 0px 0vw 0vw 3vw;
+
+                    font-size: .8em;
+
+                    .chevronDown {
+                        color: rgba($color: $almostBlack, $alpha: .7);
+                        padding-left: 10px;
+                        height: 5px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        color: $almostBlack;
+                    }
                 }
+
+                .dropdown {
+
+                    visibility: hidden;
+
+                    position: absolute;
+                    display: flex;
+                    flex-direction: column;
+
+                    margin-top: 40px;
+                    justify-content: center;
+                    padding: 10px;
+                    border-radius: 10px;
+                    background-color: $almostWhite;
+                    box-shadow: 0px 10px 30px rgba($color: $almostBlack, $alpha: .2);
+
+                    &.company {
+                        margin-left: 3vw;
+                    }
+
+
+                    .dropdownItem {
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items:center;
+                        justify-content: left;
+                        color: rgba($color: $almostBlack, $alpha: .7);
+
+                        gap: 15px;
+
+                        padding: 0vw 1vw 0vw 1vw;
+
+                        p {
+                            font-size: .8em;
+                            text-align: left;
+                        }
+
+                        .dropdownIcon {
+                            width: 15px;
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            color: $almostBlack;
+                        }
+
+                    }
+
+                }
+
+                .opened {
+                    visibility: visible;
+                }
+
             }
         }
     }
 
+    // login and register buttons
     .button {
             
-        
         width: 70px;
         padding: 8px;
         text-align: center;
         font-size: .8em;
-        color: $almostBlack;
+        color: rgba($color: $almostBlack, $alpha: .7);
         background-color: transparent;
         border-radius: 12px;
         display: none;
 
-
         &.login {
-
             
             border: none;
 
             &:hover {
                 cursor: pointer;
-                color: black;
+                color: $almostBlack;
             }
         }
 
         &.register {
-            border: 1px solid $almostBlack;
+    
+            border: 1px solid rgba($color: $almostBlack, $alpha: .7);
             margin-right: 30px;
 
             &:hover {
                 cursor: pointer;
-                border: 1px solid black;
-                color: black;
+                border: 1px solid $almostBlack;
+                color: $almostBlack;
             }
-
         }
     }
 
+    // complexity
     @media (min-width: 770px) {
+
         .menuIcon {
             display: none;
         }
@@ -184,12 +244,8 @@
 
     }
 
-    // complexity for bigger screens
-
-
     .menuOpened {
         visibility: visible;
     }
 
-    
 }

@@ -6,16 +6,89 @@
     <div class="menu">
 
         <div class="menuItems">
-            <div class="menuItem">
-                <p>Features</p>
-                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+
+            <div class="menuItem" 
+            (mouseover)="openDropdown('features')"
+            (mouseout)="closeDropdown('features')"
+            >
+
+                <div class="itemName">
+
+                    <p>Features</p>
+                    <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+
+                </div>
+                
+                <div class="dropdown features"
+                [class.opened]="showFeaturesDropdown"
+                >
+
+                    <div class="dropdownItem">
+                        <img src="assets/images/icon-todo.svg" alt="" class="dropdownIcon">
+                        <p>Todo List</p>
+                    </div>
+
+                    <div class="dropdownItem">
+                        <img src="assets/images/icon-calendar.svg" alt="" class="dropdownIcon">
+                        <p>Calendar</p>
+
+                    </div>
+
+                    <div class="dropdownItem">
+                        <img src="assets/images/icon-reminders.svg" alt="" class="dropdownIcon">
+                        <p>Reminders</p>
+                    </div>
+
+                    <div class="dropdownItem">
+                        <img src="assets/images/icon-planning.svg" alt="" class="dropdownIcon">
+                        <p>Planning</p>
+                    </div>
+                </div>
+
             </div>
-            <div class="menuItem">
-                <p>Company</p>
-                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+
+            <div class="menuItem"
+            (mouseover)="openDropdown('company')"
+            (mouseout)="closeDropdown('company')"
+            >
+
+                <div class="itemName">
+                    <p>Company</p>
+                    <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+                </div>
+
+                <div class="dropdown company"
+                [class.opened]="showCompanyDropdown"
+                >
+
+                    <div class="dropdownItem">
+                        <p>History</p>
+                    </div>
+
+                    <div class="dropdownItem">
+                        <p>Our team</p>
+                    </div>
+
+                    <div class="dropdownItem">
+                        <p>Blog</p>
+                    </div>
+
+                </div>
+
             </div>
-            <div class="menuItem">Carreers</div>
-            <div class="menuItem">About</div>
+
+            <div class="menuItem">
+                <div class="itemName">
+                    <p>Carreers</p>
+                </div>
+            </div>
+
+            <div class="menuItem">
+                <div class="itemName">
+                    <p>About</p>
+                </div>
+            </div>
+            
         </div>
 
     </div>
