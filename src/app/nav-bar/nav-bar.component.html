@@ -8,8 +8,8 @@
         <div class="menuItems">
 
             <div class="menuItem" 
-            (mouseover)="openDropdown('features')"
-            (mouseout)="closeDropdown('features')"
+            (mouseover)="dropdownAction('features')"
+            (mouseout)="dropdownAction('features')"
             >
 
                 <div class="itemName">
@@ -44,12 +44,11 @@
                         <p>Planning</p>
                     </div>
                 </div>
-
             </div>
 
             <div class="menuItem"
-            (mouseover)="openDropdown('company')"
-            (mouseout)="closeDropdown('company')"
+            (mouseover)="dropdownAction('company')"
+            (mouseout)="dropdownAction('company')"
             >
 
                 <div class="itemName">
@@ -102,27 +101,99 @@
 </div>
 
 <div class="mobileMenu"
-    [class.menuOpened]="menuOpened">
+    [class.menuOpened]="menuOpened"
+    >
 
-    <div class="content">
+    <div class="overlay">
 
-        <img src="assets/images/icon-close-menu.svg" alt="" class="closeIcon"
-        (click)="closeMenu()"
-        >
+        <div class="content">
+
+            <img src="assets/images/icon-close-menu.svg" alt="" class="closeIcon"
+            (click)="closeMenu()"
+            >
+        
+            <div class="mMenuItems">
     
-        <div class="menuItems">
-            <div class="menuItem">
-                <p>Features</p>
-                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+                <div class="mMenuItem"
+                (click)="dropdownAction('features')"
+                >
+    
+                    <div class="mItemName">
+    
+                        <p>Features</p>
+                        <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+    
+                    </div>
+    
+                        <div class="mDropdown"
+                        [class.mOpened]="showFeaturesDropdown"
+                        >
+    
+                            <div class="mDropdownItem">
+                                <img src="assets/images/icon-todo.svg" alt="" class="dropdownIcon">
+                                <p>Todo List</p>
+                            </div>
+        
+                            <div class="mDropdownItem">
+                                <img src="assets/images/icon-calendar.svg" alt="" class="dropdownIcon">
+                                <p>Calendar</p> 
+                            </div>
+        
+                            <div class="mDropdownItem">
+                                <img src="assets/images/icon-reminders.svg" alt="" class="dropdownIcon">
+                                <p>Reminders</p>
+                            </div>
+        
+                            <div class="mDropdownItem">
+                                <img src="assets/images/icon-planning.svg" alt="" class="dropdownIcon">
+                                <p>Planning</p>
+                            </div>
+    
+                        </div>
+                </div>
+    
+                <div class="mMenuItem"
+                (click)="dropdownAction('company')"
+                >
+    
+                    <div class="mItemName">
+                        <p>Company</p>
+                        <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
+                    </div>
+                    
+                    <div class="mDropdown"
+                    [class.mOpened]="showCompanyDropdown"
+                    >
+    
+                        <div class="mDropdownItem">
+                            <p>History</p>
+                        </div>
+    
+                        <div class="mDropdownItem">
+                            <p>Our team</p>
+                        </div>
+    
+                        <div class="mDropdownItem">
+                            <p>Blog</p>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="mMenuItem">
+                    <div class="mItemName">
+                        <p>Carreers</p>
+                    </div>
+                </div>
+                <div class="mMenuItem">
+                    <div class="mItemName">
+                        <p>About</p>
+                    </div>
+                </div>
             </div>
-            <div class="menuItem">
-                <p>Company</p>
-                <img src="assets/images/icon-arrow-down.svg" alt="" class="chevronDown">
-            </div>
-            <div class="menuItem">Carreers</div>
-            <div class="menuItem">About</div>
+    
+            <div class="mButton login">Login</div>
+            <div class="mButton register">Register</div>
+
         </div>
-
     </div>
-
 </div>

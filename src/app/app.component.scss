@@ -1,14 +1,30 @@
+@import 'src/styles';
+
 :host {
 
     .navBar {
         position: fixed;
     }
 
-    .home {
-        position: absolute;
-        width: 100vw;
+    .content {
 
-        // same height as nav bar so they dont overlay
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        
+        width: 100%;
         margin-top: 70px;
+
+        gap: 40px;
+    
+        .disclaimer {
+            
+            text-align: center;
+            padding: 40px;
+            background-color: rgba($color: $almostBlack, $alpha: .1);
+            color: $mediumGray;
+            font-size: .7em;
+        }
     }
+
 }

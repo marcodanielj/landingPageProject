@@ -5,9 +5,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    height: 100%;
     gap: 50px;
-
-    padding-bottom: 100px;
 
     // alinha horizontalmente no centro
     justify-content: center;
@@ -16,7 +15,7 @@
     
 
     .mobileHero {
-        min-width: 100vw;
+        min-width: 100%;
     }
 
     .desktopHero {
@@ -89,7 +88,7 @@
         }
 
         // info complexity for bigger screens
-        @media (min-width: 770px) {
+        @media (min-width: $sizeThreshold) {
 
             gap: 40px;
 
@@ -120,7 +119,7 @@
     }
 
     // adding complexity for bigger screens
-    @media (min-width: 770px) {
+    @media (min-width: $sizeThreshold) {
 
         justify-content: space-evenly;
         gap: 0px;
@@ -138,6 +137,5 @@
             align-items: unset;
             padding: 0px 15px 0px 15px;
         }
-
     }
 }

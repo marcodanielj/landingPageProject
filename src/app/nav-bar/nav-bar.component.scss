@@ -46,6 +46,8 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            margin-left: 50px;
+            gap: 3vw;
             justify-content: flex-start;
             
             // itemName + dropdown
@@ -61,7 +63,7 @@
                     align-items: center;
                     color: rgba($color: $almostBlack, $alpha: .7);
 
-                    padding: 0px 0vw 0vw 3vw;
+                    padding: 0px 0vw 0vw 0vw;
 
                     font-size: .8em;
 
@@ -79,11 +81,11 @@
 
                 .dropdown {
 
-                    visibility: hidden;
-
                     position: absolute;
                     display: flex;
                     flex-direction: column;
+
+                    display: none;
 
                     margin-top: 40px;
                     justify-content: center;
@@ -93,7 +95,7 @@
                     box-shadow: 0px 10px 30px rgba($color: $almostBlack, $alpha: .2);
 
                     &.company {
-                        margin-left: 3vw;
+                        margin-left: 0vw;
                     }
 
 
@@ -128,7 +130,7 @@
                 }
 
                 .opened {
-                    visibility: visible;
+                    display: block;
                 }
 
             }
@@ -170,8 +172,174 @@
         }
     }
 
+    .mobileMenu {
+
+        visibility: hidden;
+
+        // creates de background Dim
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba($color: $almostBlack, $alpha: .7);
+
+        .overlay {
+
+            background-color: $almostWhite;
+            position: fixed;
+            
+            height: 100vh;
+            width: 65vw;
+
+            right: 0;
+
+            overflow-y: scroll;
+
+            .content {
+
+                display: flex;            
+                overflow-y: scroll;
+    
+                // todos as childs em uma LINHA = EIXO HORIZONTAL
+                flex-direction: row;
+    
+                // wrap é o que PERMITE a quebra para a proxima linha
+                flex-wrap: wrap;
+                padding: 20px;
+                
+                // align-items muda no eixo perpendicular ao do flex-direction
+                // nesse caso será o VERTICAL, ou seja, em CIMA pois é o start do eixo
+                align-items: flex-start;
+    
+                // justify-content muda no eixo do flex-direction
+                // nesse caso será o HORIZONTAL, ou seja, na direita pois é o end do eixo
+                justify-content: flex-end;
+    
+                gap: 10px;
+    
+                .mButton {
+    
+                    width: 100%;
+                    padding: 12px 0px 12px 0px;
+                    text-align: center;
+                    font-size: .9em;
+                    color: rgba($color: $almostBlack, $alpha: .7);
+                    background-color: transparent;
+                    border-radius: 12px;
+    
+                    &.login {
+                        
+                        border: none;
+    
+                        &:hover {
+                            cursor: pointer;
+                            color: $almostBlack;
+                        }
+                    }
+    
+                    &.register {
+                
+                        border: 1px solid rgba($color: $almostBlack, $alpha: .7);
+                        margin-right: 0px;
+    
+                        &:hover {
+                            cursor: pointer;
+                            border: 1px solid $almostBlack;
+                            color: $almostBlack;
+                        }
+                    }
+                }
+    
+                .mMenuItems {
+    
+                    width: 100%;
+                    font-size: 1em;
+                    color: $mediumGray;
+    
+                    .mMenuItem {
+                        
+                        padding: 0px;
+                        display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap;
+                        flex-grow: 1;
+                        align-items: flex-start;
+    
+                        &:hover {
+                            cursor: pointer;
+                        }
+    
+                        .mItemName {
+    
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            align-items: center;
+    
+                            .chevronDown {
+                                color: $mediumGray;
+                                padding: 10px;
+                                width: 10px;
+                            }
+                        }
+    
+                        .mDropdown {
+    
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-start;
+                            padding-left: 25px;
+    
+                            display: none;
+    
+                            .mDropdownItem {
+    
+                                display: flex;
+                                flex-direction: row;
+                                align-items:center;
+                                justify-content: left;
+                                color: rgba($color: $almostBlack, $alpha: .7);
+    
+                                gap: 15px;
+    
+                                p {
+                                    text-align: left;
+                                }
+    
+                                .dropdownIcon {
+                                    width: 15px;
+                                }
+    
+                                &:hover {
+                                    cursor: pointer;
+                                    color: $almostBlack;
+                                }
+                            }
+                        }
+    
+                        .mOpened {
+                            display: block;
+                        }
+                    }
+                }
+    
+                .closeIcon {
+    
+                    width: 20px;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+
+        
+
+    }
+
     // complexity
-    @media (min-width: 770px) {
+    @media (min-width: $sizeThreshold) {
 
         .menuIcon {
             display: none;
@@ -184,64 +352,10 @@
         .button {
             display: block;
         }
-    }
 
-    .mobileMenu {
-
-        visibility: hidden;
-
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        background-color: rgba($color: $almostBlack, $alpha: .7);
-
-        .content {
-
-            background-color: $almostWhite;
-            position: fixed;
-            right: 0;
-            height: 100vh;
-            width: 70vw;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            padding: 20px;
-            
-            align-items: flex-end;
-
-            .menuItems {
-
-                width: 100%;
-                font-size: 1.2em;
-                color: $mediumGray;
-
-                .menuItem {
-                    padding: 15px;
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-
-                    &:hover {
-                        cursor: pointer;
-                    }
-
-                    .chevronDown {
-                        color: $mediumGray;
-                        padding: 20px;
-                        height: 10px;
-                    }
-                }
-            }
-
-            .closeIcon {
-
-                width: 30px;
-                &:hover {
-                    cursor: pointer;
-                }
-            }
+        .mOpened {
+            display: none;
         }
-
     }
 
     .menuOpened {

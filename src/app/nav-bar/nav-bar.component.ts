@@ -19,38 +19,40 @@ export class NavBarComponent implements OnInit {
 
   openMenu() {
     this.menuOpened = true;
-    console.log('the menu is now opened');
   }
 
-  openDropdown(item: string) {
+  dropdownAction(item: string) {
 
     switch (item) {
 
       case 'features':
+
+      if (this.showFeaturesDropdown == false) {
         this.showFeaturesDropdown = true;
-        break;
+      } else {
+        this.showFeaturesDropdown = false
+      }
+      
+      break;
 
       case 'company':
+
+      if (this.showCompanyDropdown == false) {
         this.showCompanyDropdown = true;
-        break;
-    }
-  }
+      } else {
+        this.showCompanyDropdown = false
+      }
+      
+      break;
 
-  closeDropdown(item: string) {
-
-    switch (item) {
-
-      case 'features':
-        this.showFeaturesDropdown = false;
-        break;
-
-      case 'company':
-        this.showCompanyDropdown = false;
-        break;
+     
     }
   }
 
   closeMenu() {
+
+    this.showCompanyDropdown = false;
+    this.showFeaturesDropdown = false;
     this.menuOpened = false;
   }
 
