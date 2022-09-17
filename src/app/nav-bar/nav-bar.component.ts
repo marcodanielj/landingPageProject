@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  menuOpened = true;
+  menuOpened = false;
 
   showFeaturesDropdown = false;
   showCompanyDropdown = false;
