@@ -59,9 +59,11 @@
             background-color: $almostBlack;
             border-radius: 13px;
             border: 1px solid transparent;
+
+            transition: all 100ms ease-in-out;
             
 
-            &:hover {
+            &:hover, &:active {
 
                 cursor: pointer;
                 border: 1px solid $almostBlack;

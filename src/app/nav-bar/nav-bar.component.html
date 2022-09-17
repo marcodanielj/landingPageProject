@@ -8,8 +8,7 @@
         <div class="menuItems">
 
             <div class="menuItem" 
-            (mouseover)="dropdownAction('features')"
-            (mouseout)="dropdownAction('features')"
+            (click)="dropdownAction('features')"
             >
 
                 <div class="itemName">
@@ -47,8 +46,7 @@
             </div>
 
             <div class="menuItem"
-            (mouseover)="dropdownAction('company')"
-            (mouseout)="dropdownAction('company')"
+            (click)="dropdownAction('company')"
             >
 
                 <div class="itemName">
@@ -101,10 +99,12 @@
 </div>
 
 <div class="mobileMenu"
-    [class.menuOpened]="menuOpened"
+    [class.mMenuOpened]="menuOpened"
     >
 
-    <div class="overlay">
+    <div class="overlay"
+    [class.mOverlayOpened]="menuOpened"
+    >
 
         <div class="content">
 
@@ -126,7 +126,7 @@
                     </div>
     
                         <div class="mDropdown"
-                        [class.mOpened]="showFeaturesDropdown"
+                        [class.mDropdownOpened]="showFeaturesDropdown"
                         >
     
                             <div class="mDropdownItem">
@@ -162,7 +162,7 @@
                     </div>
                     
                     <div class="mDropdown"
-                    [class.mOpened]="showCompanyDropdown"
+                    [class.mDropdownOpened]="showCompanyDropdown"
                     >
     
                         <div class="mDropdownItem">

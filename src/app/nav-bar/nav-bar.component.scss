@@ -85,9 +85,12 @@
                     display: flex;
                     flex-direction: column;
 
-                    display: none;
+                    visibility: hidden;
+                    opacity: 0;
 
-                    margin-top: 40px;
+                    transition: all 100ms ease-in-out;
+                    
+                    margin-top: 20px;
                     justify-content: center;
                     padding: 10px;
                     border-radius: 10px;
@@ -126,11 +129,12 @@
                         }
 
                     }
-
                 }
 
                 .opened {
-                    display: block;
+                    visibility: visible;
+                    opacity: 1;
+                    margin-top: 40px;
                 }
 
             }
@@ -175,6 +179,7 @@
     .mobileMenu {
 
         visibility: hidden;
+        opacity: 0;
 
         // creates de background Dim
         position: absolute;
@@ -182,15 +187,20 @@
         width: 100vw;
         background-color: rgba($color: $almostBlack, $alpha: .7);
 
+        transition: all 200ms ease-in-out;
+
         .overlay {
 
             background-color: $almostWhite;
             position: fixed;
+
+            visibility: hidden;
             
             height: 100vh;
             width: 65vw;
+            right: -65vw;
 
-            right: 0;
+            transition: all 400ms ease-in-out;
 
             overflow-y: scroll;
 
@@ -316,7 +326,7 @@
                             }
                         }
     
-                        .mOpened {
+                        .mDropdownOpened {
                             display: block;
                         }
                     }
@@ -354,8 +364,15 @@
         }
     }
 
-    .menuOpened {
+    .mMenuOpened {
         visibility: visible;
+        opacity: 1;
+
+        .mOverlayOpened {
+            visibility: visible;
+            right: 0vw;
+            
+        }
     }
 
 }

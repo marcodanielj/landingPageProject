@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  menuOpened = false;
+  menuOpened = true;
 
   showFeaturesDropdown = false;
   showCompanyDropdown = false;
@@ -29,6 +29,7 @@ export class NavBarComponent implements OnInit {
 
       if (this.showFeaturesDropdown == false) {
         this.showFeaturesDropdown = true;
+        this.showCompanyDropdown = false;
       } else {
         this.showFeaturesDropdown = false
       }
@@ -39,6 +40,7 @@ export class NavBarComponent implements OnInit {
 
       if (this.showCompanyDropdown == false) {
         this.showCompanyDropdown = true;
+        this.showFeaturesDropdown = false;
       } else {
         this.showCompanyDropdown = false
       }
